@@ -25,10 +25,11 @@
 #include <QErrorMessage>
 #include <QTimer>
 #include "exchangemessage.h"
+#include "config.h"
 
-static int current_refresh_interval = default_refresh_interval;
-static QString provider_url = default_provider_url;
-static QString provider_field = default_provider_field;
+static int current_refresh_interval;
+static QString provider_url;
+static QString provider_field;
 
 DataFetcher::DataFetcher()
 {
@@ -56,6 +57,9 @@ void DataFetcher::response(QNetworkReply* reply)
 
 ExchangeDispatcher::ExchangeDispatcher():socket(nullptr)
 {
+    current_refresh_interval = default_refresh_interval;
+    provider_url = default_provider_url;
+    provider_field = default_provider_field;
 }
 
 void ExchangeDispatcher::run()

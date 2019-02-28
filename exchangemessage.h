@@ -25,10 +25,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <memory>
-
-extern const int default_refresh_interval;
-extern const QString default_provider_url;
-extern const QString default_provider_field;
+#include "config.h"
 
 // interface for ExchangeMessage Type
 struct ExchangeMessage

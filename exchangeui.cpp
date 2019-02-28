@@ -22,6 +22,7 @@
 #include "exchangeui.h"
 #include "exchangemessage.h"
 #include <QtCharts>
+#include "config.h"
 
 const int minWidth = 800;
 const int minHeight = 600;

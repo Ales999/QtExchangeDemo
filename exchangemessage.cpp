@@ -22,10 +22,6 @@
 #include "exchangemessage.h"
 #include <QDebug>
 
-const int default_refresh_interval = 1000;
-const QString default_provider_url = "https://www.bitstamp.net/api/v2/ticker/etheur";
-const QString default_provider_field = "last";
-
 // factory method
 std::unique_ptr<ExchangeMessage> ExchangeMessage::createFromJson(QByteArray &&json_data)
 {

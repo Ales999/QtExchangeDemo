@@ -30,14 +30,16 @@ SOURCES += \
     exchangedispatcher.cpp \
     exchangeserver.cpp \
     exchangeclient.cpp \
-    exchangemessage.cpp
+    exchangemessage.cpp \
+    config.cpp
 
 HEADERS += \
         exchangeui.h \
     exchangedispatcher.h \
     exchangeserver.h \
     exchangeclient.h \
-    exchangemessage.h
+    exchangemessage.h \
+    config.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
