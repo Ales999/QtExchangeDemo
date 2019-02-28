@@ -102,6 +102,8 @@ void ExchangeDispatcher::run()
     {
         throw std::runtime_error("Server could not start");
     }
+
+    emit server_is_listening();
     qDebug() << "Server started";
 
     exec();

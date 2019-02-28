@@ -31,17 +31,24 @@ int main(int argc, char *argv[])
 
     qDebug() << "Main ThreadId:" << QThread::currentThreadId();
 
-    // start exchange server
     ExchangeServer eserver;
-
-    // start exchange client
     QSharedPointer<ExchangeClient> client;
-    client.reset(new ExchangeClient());
-    client->connectToExchangeServer();
+    QScopedPointer<ExchangeUI> ui;
 
-    // start UI
-    ExchangeUI ui(client);
-    ui.show();
+    // wait for server initialization by ExchangeServer::ready signal
+    QObject::connect(&eserver, &ExchangeServer::ready, [&ui, client]() mutable {
+        // start exchange client
+        client.reset(new ExchangeClient());
+        client->connectToExchangeServer();
 
+        // start UI
+        ui.reset(new ExchangeUI(client));
+        ui->show();
+    });
+
+    // start server thread
+    eserver.start();
+
+    // start main loop
     return a.exec();
 }

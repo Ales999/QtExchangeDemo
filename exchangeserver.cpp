@@ -23,6 +23,11 @@
 
 ExchangeServer::ExchangeServer(QObject *parent) : QObject(parent)
 {
+    connect(&exchangeDispatcher, &ExchangeDispatcher::server_is_listening, this, &ExchangeServer::ready);
+}
+
+void ExchangeServer::start()
+{
     exchangeDispatcher.start();
 }
 

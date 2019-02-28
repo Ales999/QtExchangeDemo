@@ -32,10 +32,10 @@ class ExchangeServer : public QObject
 public:
     explicit ExchangeServer(QObject *parent = nullptr);
     ~ExchangeServer();
+    void start();
 
 signals:
-
-public slots:
+    void ready();
 
 private:
     ExchangeDispatcher exchangeDispatcher;

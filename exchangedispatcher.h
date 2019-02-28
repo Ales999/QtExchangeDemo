@@ -58,6 +58,7 @@ signals:
     void stopTimer();
     void newConnection();
     void data_fetched(double);
+    void server_is_listening();
 
 private slots:
     void handleReadyRead();
