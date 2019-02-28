@@ -25,6 +25,10 @@
 #include "exchangeserver.h"
 #include "exchangeclient.h"
 
+// QtExchangeDemo main perform the following actions:
+// Launch the exchange server to fetch currency exchange data.
+// Instance the exchange client that handle server preferences and messages.
+// Run exchange UI to handle the client backend.
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -35,7 +39,7 @@ int main(int argc, char *argv[])
     QSharedPointer<ExchangeClient> client;
     QScopedPointer<ExchangeUI> ui;
 
-    // wait for server initialization by ExchangeServer::ready signal
+    // wait for server initialization by ExchangeServer::readyc signal
     QObject::connect(&eserver, &ExchangeServer::ready, [&ui, client]() mutable {
         // start exchange client
         client.reset(new ExchangeClient());

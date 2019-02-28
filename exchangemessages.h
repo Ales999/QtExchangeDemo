@@ -27,7 +27,12 @@
 #include <memory>
 #include "config.h"
 
-// interface for ExchangeMessage Type
+// Interface for ExchangeMessage.
+// QtExchangeDemo use a simple protocol based on Json messages.
+// The ExchangeMessage subclasses define three types of messages:
+// 1 - parameter is an outgoing message to configure exchange server ( dispatcher and fetcher ).
+// 2 - set active status is an outgoing message activate/deactivate fetch of data
+// 3 - data is an incoming message with the fetched exchange value
 struct ExchangeMessage
 {
     enum class MessageType

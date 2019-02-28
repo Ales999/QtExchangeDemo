@@ -19,7 +19,7 @@
  * along with QtExchangeDemo.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "exchangemessage.h"
+#include "exchangemessages.h"
 #include <QDebug>
 
 // factory method

@@ -24,7 +24,7 @@
 #include <QJsonParseError>
 #include <QErrorMessage>
 #include <QTimer>
-#include "exchangemessage.h"
+#include "exchangemessages.h"
 #include "config.h"
 
 static int current_refresh_interval;
@@ -64,7 +64,7 @@ ExchangeDispatcher::ExchangeDispatcher():socket(nullptr)
 
 void ExchangeDispatcher::run()
 {
-    // setup of timer to fetch data
+    // Setup of DataFetcher loop timer to get data
     timer.reset(new QTimer());
     DataFetcher data_fetcher;
     connect(timer.get(), SIGNAL(timeout()), &data_fetcher, SLOT(onTimeout()));
@@ -84,6 +84,8 @@ void ExchangeDispatcher::run()
 
     qDebug() << "ExchangeDispatcher ThreadId:" << QThread::currentThreadId();
 
+    // start tpc server to handle client connection
+    // this version handle just one client.
     QTcpServer server;
     server.setParent(nullptr);
     server.moveToThread(this);

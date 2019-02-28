@@ -30,7 +30,7 @@ SOURCES += \
     exchangedispatcher.cpp \
     exchangeserver.cpp \
     exchangeclient.cpp \
-    exchangemessage.cpp \
+    exchangemessages.cpp \
     config.cpp
 
 HEADERS += \
@@ -38,7 +38,7 @@ HEADERS += \
     exchangedispatcher.h \
     exchangeserver.h \
     exchangeclient.h \
-    exchangemessage.h \
+    exchangemessages.h \
     config.h
 
 # Default rules for deployment.

@@ -22,7 +22,7 @@
 #include "exchangeclient.h"
 #include <QJsonDocument>
 #include <QJsonObject>
-#include "exchangemessage.h"
+#include "exchangemessages.h"
 
 ExchangeClient::ExchangeClient():
     refresh_interval(default_refresh_interval),

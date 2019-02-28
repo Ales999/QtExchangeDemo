@@ -25,6 +25,8 @@
 #include <QMainWindow>
 #include "exchangeclient.h"
 
+// Administer client backend and show exchange data
+// by a Chart component.
 class ExchangeUI : public QMainWindow
 {
     Q_OBJECT

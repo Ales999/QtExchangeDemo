@@ -20,7 +20,7 @@
  */
 
 #include "exchangeui.h"
-#include "exchangemessage.h"
+#include "exchangemessages.h"
 #include <QtCharts>
 #include "config.h"
 

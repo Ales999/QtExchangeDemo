@@ -30,7 +30,8 @@
 #include <QTcpServer>
 #include <QTimer>
 
-
+// DataFetcher fetch exchange data and run in a timer loop
+// DataFetcher is a worker activated by ExchangeDispatcher.
 class DataFetcher : public QObject
 {
     Q_OBJECT
@@ -45,7 +46,8 @@ private:
     QNetworkAccessManager qnam;
 };
 
-
+// ExchangeDispatcher handle client messages and communication
+// and by DataFetcher fetch exchange data.
 class ExchangeDispatcher : public QThread
 {
     Q_OBJECT
